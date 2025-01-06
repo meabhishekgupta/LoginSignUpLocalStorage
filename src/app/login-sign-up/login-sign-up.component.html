@@ -1,0 +1,46 @@
+<div class="loginSignUp">
+    <div class="login" *ngIf="toggleVar === 'SignUp'">
+        <form>
+            <h3>REGISTER</h3>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+                <input type="text" class="form-control" name="fullName" [(ngModel)]="registerObj.fullName" id="exampleFormControlInput1" placeholder="Ravi Kumar" />
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="emailAddress" [(ngModel)]="registerObj.emailAddress" id="exampleFormControlInput2" placeholder="name@example.com" />
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput3" class="form-label">Password</label>
+                <input type="password" class="form-control" name="Password" [(ngModel)]="registerObj.password" id="exampleFormControlInput3" placeholder="Password" />
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <button class="btn btn-success" type="submit" (click)="onRegister()">Register</button>
+                <span>
+                    Already having Account ?
+                    <span class="underLine" (click)="toggleVarFunc('Login')">Login</span>
+                </span>
+            </div>
+        </form>
+    </div>
+    <div class="SignUp" *ngIf="toggleVar === 'Login'">
+        <form>
+            <h3>LOGIN</h3>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="emailAddress" [(ngModel)]="loginObj.emailAddress" id="exampleFormControlInput1" placeholder="name@example.com" />
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="loginObj.password" id="exampleFormControlInput2" placeholder="Password" />
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <button class="btn btn-success" type="submit" (click)="onLogin()">Login</button>
+                <span>
+                    New User ?
+                    <span class="underLine" (click)="toggleVarFunc('SignUp')">Register</span>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>

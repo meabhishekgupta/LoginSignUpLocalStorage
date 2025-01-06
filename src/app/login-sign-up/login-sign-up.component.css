@@ -1,0 +1,13 @@
+.loginSignUp{
+    max-width: 500px;
+    margin: 30px auto 10px auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.1);
+}
+
+.underLine{
+    text-decoration: underline;
+    color: rgb(16, 86, 249);
+    cursor: pointer;
+}
