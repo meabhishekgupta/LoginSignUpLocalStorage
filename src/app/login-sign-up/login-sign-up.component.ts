@@ -22,11 +22,12 @@ export class LoginSignUpComponent {
   constructor(private _router: Router){
   }
   onLogin(){
-    debugger;
+    // debugger;
     const localUsers=localStorage.getItem('users');
     if(localUsers!=null){
-      const user=JSON.parse(localUsers);
-      const isUserExist = user.Find((users: Register)=>user.emailAddress== this.loginObj.emailAddress && user.password == this.loginObj.password);
+      const users=JSON.parse(localUsers);      
+      const isUserExist = users.Find((users: Register)=>{users.emailAddress== this.loginObj.emailAddress && users.password == this.loginObj.password});
+      debugger;
       if(isUserExist!= undefined){
         alert('User Login Successful');
         this._router.navigateByUrl('/Dashboard')
