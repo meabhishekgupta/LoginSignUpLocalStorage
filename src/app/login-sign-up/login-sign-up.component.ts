@@ -26,7 +26,7 @@ export class LoginSignUpComponent {
     const localUsers=localStorage.getItem('users');
     if(localUsers!=null){
       const users=JSON.parse(localUsers);      
-      const isUserExist = users.Find((users: Register)=>{users.emailAddress== this.loginObj.emailAddress && users.password == this.loginObj.password});
+      const isUserExist = users.Find((users: Register)=>users.emailAddress== this.loginObj.emailAddress && users.password == this.loginObj.password);
       debugger;
       if(isUserExist!= undefined){
         alert('User Login Successful');
@@ -36,6 +36,7 @@ export class LoginSignUpComponent {
         this.toggleVar='SignUp'
       }     
     }else{
+      debugger
       alert('User Not Registered');
       this.toggleVar='SignUp'
     }
